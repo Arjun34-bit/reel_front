@@ -1,0 +1,19 @@
+.label_container {
+  display: flex;
+  position: relative;
+  margin-top: 30rem;
+}
+
+.label_name {
+  /* gap: 1.25rem; */
+  width: 100%;
+  position: absolute;
+}
+
+@media (max-width: 400px) {
+  .label_name {
+    gap: 2rem;
+    width: 100%;
+    position: absolute;
+  }
+}

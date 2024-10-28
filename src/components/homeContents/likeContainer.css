@@ -1,0 +1,27 @@
+/* Keyframes for slide-up and slide-down animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(0); /* Initial position */
+  }
+  to {
+    transform: translateY(-100%); /* Slide upwards */
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(100%); /* Start from below */
+  }
+  to {
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Apply these classes dynamically when transitioning */
+.slide-up {
+  animation: slideUp 0.5s ease forwards; /* Slides up and removes the reel */
+}
+
+.slide-down {
+  animation: slideDown 0.5s ease forwards; /* Slides down the next reel */
+}

@@ -1,0 +1,14 @@
+.icon-class {
+  position: absolute;
+  width: 1.75rem;
+  height: 1.75rem;
+  right: 2rem;
+  top: 5.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .icon-class {
+    display: none;
+  }
+}

@@ -1,0 +1,27 @@
+.user_name_container {
+  display: flex;
+  margin-top: 24rem;
+  color: #ffff;
+  position: relative;
+}
+
+.name_tag {
+  display: flex;
+  gap: 1.25rem;
+  position: absolute;
+}
+
+@media (max-width: 400px) {
+  .user_name_container {
+    display: flex;
+    margin-top: 31rem;
+    color: #ffff;
+    position: relative;
+  }
+
+  .name_tag {
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+  }
+}

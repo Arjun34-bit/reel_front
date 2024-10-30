@@ -20,8 +20,12 @@ const LikeMainContainer = () => {
   const refsArray = useRef([]); // Array to store refs for each LikeBox component
 
   // Detect scroll direction and navigate to the next/previous reel accordingly
+
   const handleScroll = () => {
-    const currentScrollTop = window.scrollY; // Get the scroll position
+    const currentScrollTop = window.scrollY;
+
+    // Debounce logic to reduce the number of calls
+    if (Math.abs(currentScrollTop - lastScrollTop) < 5) return; // Ignore small movements
 
     if (currentScrollTop > lastScrollTop) {
       scrollToNextLikeBox();
@@ -29,7 +33,8 @@ const LikeMainContainer = () => {
       scrollToPrevLikeBox();
     }
 
-    setLastScrollTop(currentScrollTop); // Update last scroll position
+    // Update the last scroll position
+    lastScrollTop = currentScrollTop;
   };
 
   // Scroll to the next LikeBox
@@ -65,6 +70,7 @@ const LikeMainContainer = () => {
   const playCurrentVideo = (index) => {
     refsArray.current.forEach((ref, idx) => {
       const videoElement = ref.querySelector("video"); // Assuming LikeBox contains a <video> tag
+      console.log(videoElement);
       if (videoElement) {
         if (idx === index) {
           videoElement.play();
